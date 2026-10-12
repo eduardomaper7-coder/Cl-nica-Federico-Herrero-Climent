@@ -430,7 +430,7 @@ footer small{font-size:13px;color:var(--stone);letter-spacing:.04em}
     var names=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
     st.textContent='Cerrado ahora · abrimos el '+names[n]+' a las '+fmt(sched[n][0]);st.className='status closed';
   }
-  if(hol){st.textContent='Hoy es festivo · horario sujeto a cambios';st.className='status closed';document.getElementById('note').textContent='Hoy es festivo ('+hol+'): el horario podría cambiar. Llámenos antes de acudir.'}
+  if(hol){document.getElementById('note').textContent='Hoy es festivo ('+hol+'): el horario podría cambiar. Llámenos antes de acudir.'}
 
   // Copiar al portapapeles
   document.querySelectorAll('.copy').forEach(function(b){
