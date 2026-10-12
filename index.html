@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clínica Herrero Climent</title>
+<meta name="description" content="Clínica Herrero Climent. Rehabilitación oral y estética dental en Chamartín, Madrid, desde 1990. Calle del Dr. Fleming, 54. Tel. 913 594 950.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: the logo's four-square diamond is the grid — every section is anchored by a rotated square, orange marks the one thing that matters in each block. */
+:root{
+  --paper:#fbfbfa;
+  --paper-2:#f1f1ef;
+  --ink:#1f1f1c;
+  --ink-soft:#4a4a46;
+  --stone:#8a8a87;
+  --stone-light:#c9c9c5;
+  --line:#e2e2de;
+  --orange:#e57609;
+  --orange-ink:#b85c00;
+  --on-orange:#ffffff;
+  --block:#1f1f1c;
+  --on-block:#f4f4f2;
+  --on-block-soft:#a9a9a4;
+  --serif:"Libre Baskerville","Baskerville","Georgia","Times New Roman",serif;
+  --sans:"Jost","Futura","Century Gothic","Avenir Next",system-ui,sans-serif;
+  --wrap:1180px;
+  --gutter:clamp(16px,4vw,40px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#151513;--paper-2:#1d1d1b;--ink:#efefec;--ink-soft:#b8b8b3;--stone:#8f8f8b;--stone-light:#4a4a47;--line:#2d2d2a;
+    --orange:#f08a22;--orange-ink:#f5a04a;--on-orange:#1a1309;--block:#0e0e0d;--on-block:#f4f4f2;--on-block-soft:#9a9a95;color-scheme:dark}
+}
+:root[data-theme="dark"]{
+  --paper:#151513;--paper-2:#1d1d1b;--ink:#efefec;--ink-soft:#b8b8b3;--stone:#8f8f8b;--stone-light:#4a4a47;--line:#2d2d2a;
+  --orange:#f08a22;--orange-ink:#f5a04a;--on-orange:#1a1309;--block:#0e0e0d;--on-block:#f4f4f2;--on-block-soft:#9a9a95;color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--orange-ink);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:8px;height:8px;background:var(--orange);transform:rotate(45deg);flex:none}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand svg{width:46px;height:46px;flex:none}
+.brand-name{font-family:var(--serif);font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}
+.top .brand-name,.top .brand-sub{white-space:nowrap}
+.brand-sub{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.28em;color:var(--orange-ink);margin-top:3px}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px}
+nav a{white-space:nowrap;text-decoration:none;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s}
+nav a:hover{color:var(--orange-ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:14px 24px;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--orange);border-color:var(--orange);color:var(--on-orange)}
+.btn.solid:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.top .btn{padding:11px 18px}
+@media (max-width:1180px){nav{display:none}}
+.top .btn{white-space:nowrap}
+@media (max-width:520px){.brand-name{font-size:15px}.brand-sub{font-size:8px;letter-spacing:.2em}.top .btn span.long{display:none}.brand svg{width:38px;height:38px}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);align-items:center;padding-block:clamp(56px,9vw,120px)}
+.hero h1{font-size:clamp(36px,5.4vw,70px);letter-spacing:-.015em;line-height:1.12;margin-top:26px}
+.hero h1 em{font-style:italic;color:var(--orange-ink)}
+.hero .lead{font-size:clamp(17px,1.4vw,19px);color:var(--ink-soft);max-width:34em;margin-top:28px;font-weight:300}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-mark{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:1;max-width:100%}
+.hero-mark svg{width:100%;height:100%;overflow:visible}
+.hero-mark .tile{transform-box:fill-box;transform-origin:center;animation:settle 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero-mark .t2{animation-delay:.08s}.hero-mark .t3{animation-delay:.16s}.hero-mark .t4{animation-delay:.24s}
+@keyframes settle{from{transform:scale(.86);opacity:.35}to{transform:scale(1);opacity:1}}
+.since{position:absolute;right:-6px;bottom:6%;font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);writing-mode:vertical-rl;transform:rotate(180deg)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-mark{width:min(72vw,300px);order:-1}.since{display:none}}
+
+/* ---------- facts strip ---------- */
+.facts{background:var(--block);color:var(--on-block)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-block:0}
+.fact{padding:34px 26px;border-left:1px solid color-mix(in srgb,var(--on-block) 14%,transparent);display:flex;flex-direction:column;gap:6px}
+.fact:first-child{border-left:0;padding-left:0}
+.fact b{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,44px);line-height:1;font-variant-numeric:tabular-nums}
+.fact b i{font-style:normal;color:var(--orange)}
+.fact > span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-block-soft)}
+@media (max-width:760px){.facts .wrap{grid-template-columns:1fr 1fr}.fact{padding:26px 18px}.fact:nth-child(3){border-left:0;padding-left:0}.fact:nth-child(n+3){border-top:1px solid color-mix(in srgb,var(--on-block) 14%,transparent)}}
+
+/* ---------- sections ---------- */
+section.block{padding-block:clamp(72px,10vw,130px)}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(44px,6vw,72px)}
+.head h2{font-size:clamp(30px,3.8vw,50px);line-height:1.15;margin-top:20px}
+.head p{color:var(--ink-soft);max-width:34em;font-weight:300}
+@media (max-width:860px){.head{grid-template-columns:1fr}}
+
+/* treatments */
+.treat{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.t{position:relative;padding:38px 34px 42px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:14px;min-width:0}
+.t:not(:nth-child(3n+1)){padding-left:34px;border-left:1px solid var(--line)}
+.t .ico{width:46px;height:46px}
+.t h3{font-size:22px;line-height:1.25}
+.t p{color:var(--ink-soft);font-size:16px;font-weight:300}
+.t ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.t li{font-size:12px;letter-spacing:.08em;padding:5px 11px;border:1px solid var(--line);color:var(--ink-soft)}
+.t::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--orange);transition:width .45s ease}
+.t:not(:nth-child(3n+1))::after{left:34px}
+.t:hover::after{width:64px}
+@media (max-width:960px){.treat{grid-template-columns:1fr 1fr}.t,.t:not(:nth-child(3n+1)){padding:34px 28px 38px 0;border-left:0}.t:nth-child(2n){padding-left:28px;border-left:1px solid var(--line)}.t::after,.t:not(:nth-child(3n+1))::after{left:0}.t:nth-child(2n)::after{left:28px}}
+@media (max-width:620px){.treat{grid-template-columns:1fr}.t,.t:nth-child(2n){padding:30px 0 34px;border-left:0}.t:nth-child(2n)::after{left:0}}
+
+/* philosophy */
+.philo{background:var(--paper-2);border-block:1px solid var(--line)}
+.philo .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.quote{font-family:var(--serif);font-size:clamp(24px,2.8vw,36px);line-height:1.4;font-style:italic}
+.quote::before{content:"“";display:block;font-size:2.4em;line-height:.6;color:var(--orange);font-style:normal;margin-bottom:12px}
+.philo-copy{display:flex;flex-direction:column;gap:22px;color:var(--ink-soft);font-weight:300}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
+.pillar{border-top:1px solid var(--ink);padding-top:16px}
+.pillar h3{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.pillar p{font-size:15px;margin-top:8px}
+@media (max-width:860px){.philo .wrap{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.step{position:relative;padding:0 26px 0 0;min-width:0}
+.step .dot{position:relative;display:flex;align-items:center;height:54px;margin-bottom:24px}
+.step .dot::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line)}
+.step:last-child .dot::before{right:auto;width:30px}
+.step .dot span{position:relative;width:38px;height:38px;display:grid;place-items:center;transform:rotate(45deg);background:var(--paper);border:1px solid var(--ink)}
+.step .dot span i{transform:rotate(-45deg);font-style:normal;font-family:var(--serif);font-size:17px}
+.step:first-child .dot span{background:var(--orange);border-color:var(--orange);color:var(--on-orange)}
+.step h3{font-size:21px}
+.step p{color:var(--ink-soft);font-size:15.5px;margin-top:10px;font-weight:300}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:44px}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.step .dot::before{display:none}}
+
+/* hours + contact */
+.visit{background:var(--block);color:var(--on-block)}
+.visit .eyebrow{color:var(--orange)}
+.visit .head p{color:var(--on-block-soft)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px)}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours caption{text-align:left;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--on-block-soft);padding-bottom:14px}
+.hours th,.hours td{padding:15px 0;border-bottom:1px solid color-mix(in srgb,var(--on-block) 14%,transparent);font-weight:400;text-align:left}
+.hours th{font-family:var(--serif);font-size:18px}
+.hours td{text-align:right;letter-spacing:.06em}
+.hours tr.closed td{color:var(--on-block-soft)}
+.hours tr.today th,.hours tr.today td{color:var(--orange)}
+.hours tr.today th::after{content:"Hoy";font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-left:12px;padding:3px 8px;border:1px solid var(--orange);vertical-align:middle}
+.status{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:15px;color:var(--on-block)}
+.status::before{content:"";width:9px;height:9px;transform:rotate(45deg);background:var(--on-block-soft);flex:none}
+.status.open::before{background:#5fbf6a}
+.status.closed::before{background:var(--orange)}
+.note{margin-top:14px;font-size:14px;color:var(--on-block-soft);font-weight:300}
+.contact{display:flex;flex-direction:column;gap:0}
+.c-row{display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:center;padding:20px 0;border-bottom:1px solid color-mix(in srgb,var(--on-block) 14%,transparent)}
+.c-row:first-child{border-top:1px solid color-mix(in srgb,var(--on-block) 14%,transparent)}
+.c-row .k{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--on-block-soft)}
+.c-row .v{font-family:var(--serif);font-size:clamp(17px,1.8vw,21px);line-height:1.3;min-width:0;overflow-wrap:anywhere;user-select:all}
+.c-row .v small{display:block;font-family:var(--sans);font-size:14px;color:var(--on-block-soft);user-select:text;margin-top:4px}
+.copy{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:none;border:1px solid color-mix(in srgb,var(--on-block) 30%,transparent);color:var(--on-block);padding:8px 12px;cursor:pointer;white-space:nowrap}
+.copy:hover{border-color:var(--orange);color:var(--orange)}
+.visit .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.visit .btn{border-color:var(--on-block);color:var(--on-block)}
+.visit .btn:hover{background:var(--on-block);color:var(--block)}
+.visit .btn.solid{border-color:var(--orange);color:var(--on-orange)}
+.visit .btn.solid:hover{background:var(--on-block);border-color:var(--on-block);color:var(--block)}
+@media (max-width:860px){.visit-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.c-row{grid-template-columns:1fr auto;row-gap:6px}.c-row .k{grid-column:1/-1}}
+
+/* footer */
+footer{padding-block:48px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+footer .brand svg{width:38px;height:38px}
+footer small{font-size:13px;color:var(--stone);letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+<!-- Logo reutilizable -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="hc-mark">
+      <rect class="tile t1" x="-46" y="-46" width="92" height="92" fill="var(--stone)" transform="translate(0,-68) rotate(45)"/>
+      <rect class="tile t4" x="-46" y="-46" width="92" height="92" fill="var(--stone)" transform="translate(0,68) rotate(45)"/>
+      <rect class="tile t2" x="-46" y="-46" width="92" height="92" fill="var(--ink)" transform="translate(-68,0) rotate(45)"/>
+      <rect class="tile t3" x="-46" y="-46" width="92" height="92" fill="var(--orange)" transform="translate(68,0) rotate(45)"/>
+      <text x="-68" y="17" text-anchor="middle" font-family="Libre Baskerville, Georgia, Times New Roman, serif" font-size="48" fill="var(--paper)">H</text>
+      <text x="68" y="17" text-anchor="middle" font-family="Libre Baskerville, Georgia, Times New Roman, serif" font-size="48" fill="#ffffff">C</text>
+    </g>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Clínica Herrero Climent, inicio">
+      <svg viewBox="-140 -140 280 280" aria-hidden="true"><use href="#hc-mark"/></svg>
+      <span><span class="brand-name">Clínica Herrero Climent</span><span class="brand-sub">Rehabilitación oral y estética dental</span></span>
+    </a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#tratamientos">Tratamientos</a></li>
+        <li><a href="#clinica">La clínica</a></li>
+        <li><a href="#primera-visita">Primera visita</a></li>
+        <li><a href="#contacto">Horario y contacto</a></li>
+      </ul>
+    </nav>
+    <a class="btn solid" href="tel:+34913594950">Pedir cita<span class="long">&nbsp;· 913 594 950</span></a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Chamartín · Madrid · Desde 1990</span>
+        <h1>Devolver la función y la <em>belleza</em> a cada sonrisa.</h1>
+        <p class="lead">Más de tres décadas dedicadas a la rehabilitación oral y la estética dental. Diagnóstico minucioso, planes de tratamiento claros y un trato cercano en nuestra clínica de la calle del Dr. Fleming.</p>
+        <div class="actions">
+          <a class="btn solid" href="tel:+34913594950">Llamar · 913 594 950</a>
+          <a class="btn" href="#tratamientos">Ver tratamientos</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <svg viewBox="-140 -140 280 280"><use href="#hc-mark"/></svg>
+        <span class="since">Est. 1990</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="La clínica en cifras">
+    <div class="wrap">
+      <div class="fact"><b>1990</b><span>Año de apertura</span></div>
+      <div class="fact"><b><span id="years">36</span><i>+</i></b><span>Años de experiencia</span></div>
+      <div class="fact"><b>5<i>/</i>7</b><span>Días de atención, de lunes a viernes</span></div>
+      <div class="fact"><b>28036</b><span>Chamartín, Madrid</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="tratamientos">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Tratamientos</span>
+          <h2>Odontología restauradora con criterio estético.</h2>
+        </div>
+        <p>Cada tratamiento parte de un estudio completo de la boca: encía, hueso, oclusión y sonrisa. Así planificamos soluciones que funcionan y duran, y que se ven naturales.</p>
+      </div>
+
+      <div class="treat">
+        <article class="t">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="4" width="24" height="16" rx="3" fill="none" stroke="var(--ink)" stroke-width="1.6"/><path d="M18 22h12l-2 4h-8zM19 28h10M20 32h8M21 36h6M22 40h4" stroke="var(--orange)" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+          <h3>Implantología</h3>
+          <p>Reposición de piezas perdidas mediante implantes, desde un diente unitario hasta arcadas completas.</p>
+          <ul><li>Implante unitario</li><li>Puentes sobre implantes</li><li>Arcada completa</li></ul>
+        </article>
+        <article class="t">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 18c0-6 6-8 10-6 3 1.5 5 1.5 8 0 3-1.5 5-1.5 8 0 4-2 10 0 10 6 0 6-3 10-4 16-1 5-3 8-5 8s-3-4-4-8c-1-3-2-4-3-4" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/><path d="M6 18c0 6 3 10 4 16 1 5 3 8 5 8s3-4 4-8c1-3 2-4 3-4" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <h3>Rehabilitación oral</h3>
+          <p>Recuperamos la capacidad de masticar, hablar y sonreír con comodidad cuando la boca ha sufrido desgaste o pérdidas.</p>
+          <ul><li>Prótesis fija</li><li>Prótesis removible</li><li>Coronas</li></ul>
+        </article>
+        <article class="t">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20c6 10 30 10 36 0" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/><path d="M12 25v4M18 27v5M24 28v5M30 27v5M36 25v4" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round"/><path d="M38 6l1.6 3.4L43 11l-3.4 1.6L38 16l-1.6-3.4L33 11l3.4-1.6z" fill="var(--orange)"/></svg>
+          <h3>Estética dental</h3>
+          <p>Mejoramos el color, la forma y la armonía de la sonrisa respetando al máximo el diente natural.</p>
+          <ul><li>Carillas</li><li>Blanqueamiento</li><li>Diseño de sonrisa</li></ul>
+        </article>
+        <article class="t">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16c5-4 11-4 16 0 5-4 11-4 16 0" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round"/><path d="M14 18v14c0 4 2 8 4 8s2-6 6-6 4 6 6 6 4-4 4-8V18" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <h3>Periodoncia</h3>
+          <p>Cuidado de encías y hueso, la base sobre la que se sostiene cualquier tratamiento a largo plazo.</p>
+          <ul><li>Tratamiento de encías</li><li>Mantenimiento</li></ul>
+        </article>
+        <article class="t">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8c-5 0-8 4-8 10 0 8 4 12 5 20 .5 3 2 4 3 4 2 0 3-3 4-7 1-3 2-5 6-5s5 2 6 5c1 4 2 7 4 7 1 0 2.5-1 3-4 1-8 5-12 5-20 0-6-3-10-8-10-4 0-6 2-10 2s-6-2-10-2z" fill="none" stroke="var(--ink)" stroke-width="1.6"/><circle cx="34" cy="16" r="3" fill="var(--orange)"/></svg>
+          <h3>Odontología general</h3>
+          <p>Revisiones, empastes, endodoncias e higiene profesional para mantener la salud de toda la familia.</p>
+          <ul><li>Revisión</li><li>Higiene</li><li>Endodoncia</li></ul>
+        </article>
+        <article class="t">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="26" fill="none" stroke="var(--ink)" stroke-width="1.6"/><path d="M6 30l10-9 8 7 6-5 12 10" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-linejoin="round"/><rect x="28" y="14" width="7" height="7" transform="rotate(45 31.5 17.5)" fill="var(--orange)"/></svg>
+          <h3>Diagnóstico y planificación</h3>
+          <p>Estudio radiológico y fotográfico para explicar con claridad la situación de partida y las opciones de tratamiento.</p>
+          <ul><li>Estudio completo</li><li>Presupuesto detallado</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block philo" id="clinica">
+    <div class="wrap">
+      <p class="quote">Una boca bien rehabilitada no se nota. Simplemente funciona, y se ve como siempre debió verse.</p>
+      <div class="philo-copy">
+        <span class="eyebrow">La clínica</span>
+        <p>Desde 1990, Clínica Herrero Climent atiende a pacientes de Chamartín y de todo Madrid. Muchos de ellos llevan décadas confiándonos su salud bucodental, y hoy vienen también sus hijos y nietos.</p>
+        <p>Nuestro trabajo se centra en los casos que requieren una visión de conjunto: bocas con piezas perdidas, desgastes, prótesis antiguas o sonrisas que el paciente quiere mejorar. Dedicamos el tiempo necesario a cada diagnóstico.</p>
+        <div class="pillars">
+          <div class="pillar"><h3>Experiencia</h3><p>Más de 35 años ejerciendo en el mismo barrio.</p></div>
+          <div class="pillar"><h3>Precisión</h3><p>Planificación detallada antes de cada tratamiento.</p></div>
+          <div class="pillar"><h3>Cercanía</h3><p>Le explicamos cada paso y cada presupuesto.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="primera-visita">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Primera visita</span>
+          <h2>Así trabajamos desde el primer día.</h2>
+        </div>
+        <p>Sabemos que acudir al dentista genera dudas. Por eso cada paciente sabe en todo momento qué vamos a hacer, cuánto durará y cuánto costará.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="dot"><span><i>1</i></span></div><h3>Cita</h3><p>Llámenos al 913 594 950 o escríbanos y le daremos hora en el horario que mejor le encaje.</p></div>
+        <div class="step"><div class="dot"><span><i>2</i></span></div><h3>Estudio</h3><p>Exploración completa, radiografías y fotografías para conocer el estado de su boca.</p></div>
+        <div class="step"><div class="dot"><span><i>3</i></span></div><h3>Plan</h3><p>Le presentamos las opciones, los plazos y un presupuesto cerrado por escrito.</p></div>
+        <div class="step"><div class="dot"><span><i>4</i></span></div><h3>Tratamiento</h3><p>Realizamos el tratamiento acordado y programamos las revisiones de mantenimiento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block visit" id="contacto">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Horario y contacto</span>
+          <h2>Le esperamos en la calle del Dr. Fleming.</h2>
+        </div>
+        <p>Atención con cita previa. Para cualquier consulta o urgencia durante nuestro horario, llámenos por teléfono.</p>
+      </div>
+
+      <div class="visit-grid">
+        <div>
+          <table class="hours" id="hours">
+            <caption>Horario de atención</caption>
+            <tbody>
+              <tr data-d="1"><th scope="row">Lunes</th><td>8:00 – 15:00</td></tr>
+              <tr data-d="2"><th scope="row">Martes</th><td>8:00 – 15:00</td></tr>
+              <tr data-d="3"><th scope="row">Miércoles</th><td>8:00 – 15:00</td></tr>
+              <tr data-d="4"><th scope="row">Jueves</th><td>8:00 – 15:00</td></tr>
+              <tr data-d="5"><th scope="row">Viernes</th><td>9:00 – 13:00</td></tr>
+              <tr data-d="6" class="closed"><th scope="row">Sábado</th><td>Cerrado</td></tr>
+              <tr data-d="0" class="closed"><th scope="row">Domingo</th><td>Cerrado</td></tr>
+            </tbody>
+          </table>
+          <p class="status" id="status" aria-live="polite">Consulte nuestro horario</p>
+          <p class="note" id="note">En días festivos el horario puede variar. Le recomendamos llamar antes de acudir.</p>
+        </div>
+
+        <div>
+          <div class="contact">
+            <div class="c-row">
+              <span class="k">Dirección</span>
+              <span class="v" id="addr">Calle del Dr. Fleming, 54<small>Chamartín · 28036 Madrid</small></span>
+              <button class="copy" type="button" data-copy="Calle del Dr. Fleming, 54, Chamartín, 28036 Madrid">Copiar</button>
+            </div>
+            <div class="c-row">
+              <span class="k">Teléfono</span>
+              <span class="v">913 594 950</span>
+              <button class="copy" type="button" data-copy="913594950">Copiar</button>
+            </div>
+            <div class="c-row">
+              <span class="k">Correo</span>
+              <span class="v">clinica@fherrerocliment.net</span>
+              <button class="copy" type="button" data-copy="clinica@fherrerocliment.net">Copiar</button>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn solid" href="tel:+34913594950">Llamar</a>
+            <a class="btn" href="mailto:clinica@fherrerocliment.net">Escribir un correo</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Calle+del+Dr.+Fleming+54+28036+Madrid" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Volver arriba">
+      <svg viewBox="-140 -140 280 280" aria-hidden="true"><use href="#hc-mark"/></svg>
+      <span><span class="brand-name">Clínica Herrero Climent</span><span class="brand-sub">Rehabilitación oral y estética dental</span></span>
+    </a>
+    <small>© <span id="yr">2026</span> Clínica Herrero Climent · Calle del Dr. Fleming, 54 · 28036 Madrid · Desde 1990</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Hora local de Madrid
+  var now;
+  try{
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',month:'2-digit',day:'2-digit',year:'numeric',hour12:false}).formatToParts(new Date());
+    var g=function(t){return (p.find(function(x){return x.type===t})||{}).value};
+    var wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[g('weekday')];
+    now={d:wd,h:+g('hour')%24,m:+g('minute'),mo:+g('month'),da:+g('day'),y:+g('year')};
+  }catch(e){var d=new Date();now={d:d.getDay(),h:d.getHours(),m:d.getMinutes(),mo:d.getMonth()+1,da:d.getDate(),y:d.getFullYear()}}
+
+  document.getElementById('yr').textContent=now.y;
+  document.getElementById('years').textContent=now.y-1990;
+
+  var sched={1:[480,900],2:[480,900],3:[480,900],4:[480,900],5:[540,780]};
+  var row=document.querySelector('#hours tr[data-d="'+now.d+'"]');
+  if(row) row.classList.add('today');
+
+  // Festivos nacionales de fecha fija (mes-día)
+  var holidays={'1-1':'Año Nuevo','1-6':'Epifanía del Señor','5-1':'Fiesta del Trabajo','8-15':'Asunción de la Virgen','10-12':'Fiesta Nacional de España','11-1':'Todos los Santos','12-6':'Día de la Constitución','12-8':'Inmaculada Concepción','12-25':'Navidad'};
+  var hol=holidays[now.mo+'-'+now.da];
+
+  var st=document.getElementById('status');
+  var t=now.h*60+now.m, s=sched[now.d];
+  var fmt=function(x){return Math.floor(x/60)+':'+String(x%60).padStart(2,'0')};
+  if(s && t>=s[0] && t<s[1]){st.textContent='Abierto ahora · hasta las '+fmt(s[1]);st.className='status open'}
+  else if(s && t<s[0]){st.textContent='Cerrado ahora · hoy abrimos a las '+fmt(s[0]);st.className='status closed'}
+  else{
+    var n=now.d,i=0;do{n=(n+1)%7;i++}while(!sched[n]&&i<7);
+    var names=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+    st.textContent='Cerrado ahora · abrimos el '+names[n]+' a las '+fmt(sched[n][0]);st.className='status closed';
+  }
+  if(hol){st.textContent='Hoy es festivo · horario sujeto a cambios';st.className='status closed';document.getElementById('note').textContent='Hoy es festivo ('+hol+'): el horario podría cambiar. Llámenos antes de acudir.'}
+
+  // Copiar al portapapeles
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var txt=b.getAttribute('data-copy'),done=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600)};
+      var fallback=function(){var r=document.createRange();r.selectNodeContents(b.previousElementSibling);var sel=getSelection();sel.removeAllRanges();sel.addRange(r);b.textContent='Seleccionado';setTimeout(function(){b.textContent='Copiar'},1600)};
+      try{navigator.clipboard.writeText(txt).then(done,fallback)}catch(e){fallback()}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
