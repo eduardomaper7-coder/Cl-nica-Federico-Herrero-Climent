@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Clínica Herrero Climent</title>
 <meta name="description" content="Clínica Herrero Climent. Rehabilitación oral y estética dental en Chamartín, Madrid, desde 1990. Calle del Dr. Fleming, 54. Tel. 913 594 950.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap">
@@ -66,7 +68,22 @@ nav a:hover{color:var(--orange-ink)}
 .btn.solid{background:var(--orange);border-color:var(--orange);color:var(--on-orange)}
 .btn.solid:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .top .btn{padding:11px 18px}
-@media (max-width:1180px){nav{display:none}}
+@media (max-width:1260px){nav{display:none}}
+@media (max-width:520px){.top .brand-name{font-size:13px;white-space:normal;letter-spacing:.03em}.top .brand-sub{display:none}.top .btn{padding:10px 14px;font-size:12px;letter-spacing:.12em}}
+@media (max-width:1620px){.top .btn span.long{display:none}nav ul{gap:18px}nav a{letter-spacing:.12em}}
+/* desplegable de Tratamientos */
+nav li{position:relative}
+nav .has-sub > a{display:inline-flex;align-items:center;gap:9px}
+nav .has-sub > a::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+nav .has-sub:hover > a::after,nav .has-sub:focus-within > a::after{transform:rotate(225deg) translateY(-1px)}
+nav .sub{position:absolute;top:100%;left:-24px;min-width:300px;padding-top:18px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility 0s .2s;z-index:40}
+nav .has-sub:hover .sub,nav .has-sub:focus-within .sub{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .2s}
+nav .sub ul{display:flex;flex-direction:column;gap:0;background:var(--paper);border:1px solid var(--line);border-top:2px solid var(--orange);box-shadow:0 14px 34px rgba(0,0,0,.12);padding:8px 0}
+nav .sub a{display:flex;align-items:center;gap:12px;padding:12px 24px;font-size:12.5px;letter-spacing:.12em;color:var(--ink-soft)}
+nav .sub a::before{content:"";width:6px;height:6px;background:var(--stone-light);transform:rotate(45deg);flex:none;transition:background .2s}
+nav .sub a:hover,nav .sub a[aria-current="page"]{color:var(--orange-ink);background:var(--paper-2)}
+nav .sub a:hover::before,nav .sub a[aria-current="page"]::before{background:var(--orange)}
+
 .top .btn{white-space:nowrap}
 @media (max-width:520px){.brand-name{font-size:15px}.brand-sub{font-size:8px;letter-spacing:.2em}.top .btn span.long{display:none}.brand svg{width:38px;height:38px}}
 
@@ -117,6 +134,11 @@ section.block{padding-block:clamp(72px,10vw,130px)}
 @media (max-width:960px){.treat{grid-template-columns:1fr 1fr}.t,.t:not(:nth-child(3n+1)){padding:34px 28px 38px 0;border-left:0}.t:nth-child(2n){padding-left:28px;border-left:1px solid var(--line)}.t::after,.t:not(:nth-child(3n+1))::after{left:0}.t:nth-child(2n)::after{left:28px}}
 @media (max-width:620px){.treat{grid-template-columns:1fr}.t,.t:nth-child(2n){padding:30px 0 34px;border-left:0}.t:nth-child(2n)::after{left:0}}
 
+.t .more{margin-top:auto;padding-top:8px;font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.t .more::after{content:"→";letter-spacing:0}
+.t .more:hover{color:var(--ink)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
 /* philosophy */
 .philo{background:var(--paper-2);border-block:1px solid var(--line)}
 .philo .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:center}
@@ -128,6 +150,29 @@ section.block{padding-block:clamp(72px,10vw,130px)}
 .pillar h3{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
 .pillar p{font-size:15px;margin-top:8px}
 @media (max-width:860px){.philo .wrap{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}}
+
+
+/* doctor */
+[id]{scroll-margin-top:84px}
+.doctor .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,96px);align-items:start}
+.doctor-intro{position:sticky;top:110px}
+.doctor-intro h2{font-size:clamp(30px,3.8vw,50px);line-height:1.15;margin-top:20px}
+.doctor-intro .lead{color:var(--ink-soft);font-weight:300;margin-top:22px;max-width:32em}
+.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.creds div{padding:18px 16px 18px 0;border-bottom:1px solid var(--line)}
+.creds div+div{padding-left:16px;border-left:1px solid var(--line)}
+.creds b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.4vw,32px);line-height:1;color:var(--orange-ink);font-variant-numeric:tabular-nums}
+.creds span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px;line-height:1.4}
+.cv{display:flex;flex-direction:column;gap:clamp(36px,5vw,56px)}
+.cv h3{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+.cv ol,.cv ul{list-style:none;margin:0;padding:0}
+.cv li{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.cv li time,.cv li .y{font-family:var(--serif);color:var(--orange-ink);font-variant-numeric:tabular-nums;font-size:16px;padding-top:1px}
+.cv li p{font-size:16px}
+.cv li small{display:block;color:var(--ink-soft);font-size:14.5px;font-weight:300;margin-top:3px}
+.cv em{font-style:italic}
+@media (max-width:900px){.doctor .wrap{grid-template-columns:1fr}.doctor-intro{position:static}}
+@media (max-width:520px){.cv li{grid-template-columns:64px 1fr;gap:12px}.creds{grid-template-columns:1fr}.creds div+div{padding-left:0;border-left:0}}
 
 /* process */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
@@ -183,20 +228,21 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;
 footer .brand svg{width:38px;height:38px}
 footer small{font-size:13px;color:var(--stone);letter-spacing:.04em}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dentist", "name": "Clínica Herrero Climent", "telephone": "+34913594950", "email": "clinica@fherrerocliment.net", "foundingDate": "1990", "address": {"@type": "PostalAddress", "streetAddress": "Calle del Dr. Fleming, 54", "addressLocality": "Madrid", "addressRegion": "Madrid", "postalCode": "28036", "addressCountry": "ES"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "08:00", "closes": "15:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "13:00"}], "employee": {"@type": "Person", "name": "Federico Herrero Climent", "honorificPrefix": "Dr.", "jobTitle": "Odontólogo", "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Universidad de Alcalá"}, {"@type": "CollegeOrUniversity", "name": "Universidad Complutense de Madrid"}, {"@type": "CollegeOrUniversity", "name": "Universitat Politècnica de Catalunya"}], "memberOf": {"@type": "Organization", "name": "Sociedad Española de Periodoncia y Osteointegración (SEPA)"}}}</script>
 </head>
 <body>
 
 <!-- Logo reutilizable -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <g id="hc-mark">
-      <rect class="tile t1" x="-46" y="-46" width="92" height="92" fill="var(--stone)" transform="translate(0,-68) rotate(45)"/>
-      <rect class="tile t4" x="-46" y="-46" width="92" height="92" fill="var(--stone)" transform="translate(0,68) rotate(45)"/>
-      <rect class="tile t2" x="-46" y="-46" width="92" height="92" fill="var(--ink)" transform="translate(-68,0) rotate(45)"/>
-      <rect class="tile t3" x="-46" y="-46" width="92" height="92" fill="var(--orange)" transform="translate(68,0) rotate(45)"/>
-      <text x="-68" y="17" text-anchor="middle" font-family="Libre Baskerville, Georgia, Times New Roman, serif" font-size="48" fill="var(--paper)">H</text>
-      <text x="68" y="17" text-anchor="middle" font-family="Libre Baskerville, Georgia, Times New Roman, serif" font-size="48" fill="#ffffff">C</text>
-    </g>
+    <g id="hc-mark"><g transform="scale(2.69) translate(-297.5,-212.6)">
+        <path class="tile t2" fill="var(--ink)" d="M 247.84 212.41 L 271.93 236.50 L 296.03 212.41 L 271.93 188.31 Z M 247.84 212.41 "/>
+        <path class="tile t4" fill="var(--stone)" d="M 273.03 237.60 L 297.13 261.69 L 321.22 237.60 L 297.13 213.50 Z M 273.03 237.60 "/>
+        <path class="tile t1" fill="var(--stone)" d="M 272.77 187.19 L 297.14 211.57 L 321.52 187.19 L 297.14 162.82 Z M 272.77 187.19 "/>
+        <path class="tile t3" fill="var(--orange)" d="M 297.96 212.39 L 322.34 236.76 L 346.71 212.39 L 322.34 188.01 Z M 297.96 212.39 "/>
+        <path fill="#ffffff" d="M 327.76 221.66 C 326.33 222.54 324.71 222.99 322.88 222.99 C 321.15 222.99 319.55 222.58 318.07 221.76 C 316.60 220.94 315.46 219.82 314.66 218.39 C 313.87 216.96 313.47 215.32 313.47 213.46 C 313.47 210.41 314.40 207.89 316.27 205.90 C 318.14 203.90 320.50 202.90 323.35 202.90 C 324.31 202.90 325.52 203.07 326.99 203.41 C 327.82 203.60 328.39 203.70 328.70 203.70 C 329.19 203.70 329.53 203.50 329.73 203.10 L 330.27 203.10 L 330.27 208.81 L 329.70 208.81 C 329.24 207.03 328.51 205.73 327.51 204.89 C 326.50 204.05 325.16 203.64 323.48 203.64 C 321.30 203.64 319.58 204.42 318.31 205.98 C 317.04 207.55 316.40 209.64 316.40 212.25 C 316.40 215.11 317.07 217.41 318.42 219.16 C 319.76 220.91 321.52 221.78 323.69 221.78 C 326.71 221.78 328.93 220.37 330.37 217.57 L 330.87 218.04 C 330.23 219.57 329.20 220.77 327.76 221.66 "/>
+        <path fill="var(--paper)" d="M 282.13 203.82 C 281.31 203.82 280.73 204.05 280.41 204.50 C 280.10 204.96 279.94 205.76 279.94 206.91 L 279.94 218.99 C 279.94 220.15 280.10 220.95 280.41 221.39 C 280.73 221.84 281.31 222.06 282.13 222.06 L 282.13 222.62 L 275.20 222.62 L 275.20 222.06 C 276.06 222.06 276.64 221.84 276.92 221.39 C 277.22 220.95 277.36 220.14 277.36 218.99 L 277.36 213.37 L 266.82 213.37 L 266.82 218.99 C 266.82 220.13 266.98 220.93 267.30 221.39 C 267.63 221.84 268.21 222.06 269.06 222.06 L 269.06 222.62 L 262.06 222.62 L 262.06 222.06 C 262.91 222.06 263.49 221.83 263.80 221.37 C 264.10 220.92 264.26 220.12 264.26 218.99 L 264.26 206.91 C 264.26 205.73 264.10 204.91 263.79 204.48 C 263.47 204.04 262.90 203.82 262.06 203.82 L 262.06 203.26 L 269.06 203.26 L 269.06 203.82 C 268.21 203.82 267.63 204.06 267.30 204.53 C 266.98 205 266.82 205.79 266.82 206.91 L 266.82 212.42 L 277.36 212.42 L 277.36 206.91 C 277.36 205.72 277.21 204.91 276.91 204.48 C 276.60 204.04 276.03 203.82 275.20 203.82 L 275.20 203.26 L 282.13 203.26 Z M 282.13 203.82 "/>
+      </g></g>
   </defs>
 </svg>
 
@@ -208,8 +254,18 @@ footer small{font-size:13px;color:var(--stone);letter-spacing:.04em}
     </a>
     <nav aria-label="Principal">
       <ul>
-        <li><a href="#tratamientos">Tratamientos</a></li>
+        <li class="has-sub"><a href="#tratamientos">Tratamientos</a>
+          <div class="sub"><ul>
+            <li><a href="implantes-dentales-chamartin.html">Implantes dentales</a></li>
+            <li><a href="rehabilitacion-oral-chamartin.html">Rehabilitación oral</a></li>
+            <li><a href="estetica-dental-chamartin.html">Estética dental</a></li>
+            <li><a href="periodoncia-chamartin.html">Periodoncia</a></li>
+            <li><a href="dentista-chamartin.html">Odontología general</a></li>
+            <li><a href="estudio-dental-chamartin.html">Diagnóstico y planificación</a></li>
+          </ul></div>
+        </li>
         <li><a href="#clinica">La clínica</a></li>
+        <li><a href="#doctor">El doctor</a></li>
         <li><a href="#primera-visita">Primera visita</a></li>
         <li><a href="#contacto">Horario y contacto</a></li>
       </ul>
@@ -262,36 +318,42 @@ footer small{font-size:13px;color:var(--stone);letter-spacing:.04em}
           <h3>Implantología</h3>
           <p>Reposición de piezas perdidas mediante implantes, desde un diente unitario hasta arcadas completas.</p>
           <ul><li>Implante unitario</li><li>Puentes sobre implantes</li><li>Arcada completa</li></ul>
+          <a class="more" href="implantes-dentales-chamartin.html">Más información<span class="sr"> sobre implantología</span></a>
         </article>
         <article class="t">
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 18c0-6 6-8 10-6 3 1.5 5 1.5 8 0 3-1.5 5-1.5 8 0 4-2 10 0 10 6 0 6-3 10-4 16-1 5-3 8-5 8s-3-4-4-8c-1-3-2-4-3-4" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/><path d="M6 18c0 6 3 10 4 16 1 5 3 8 5 8s3-4 4-8c1-3 2-4 3-4" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round"/></svg>
           <h3>Rehabilitación oral</h3>
           <p>Recuperamos la capacidad de masticar, hablar y sonreír con comodidad cuando la boca ha sufrido desgaste o pérdidas.</p>
           <ul><li>Prótesis fija</li><li>Prótesis removible</li><li>Coronas</li></ul>
+          <a class="more" href="rehabilitacion-oral-chamartin.html">Más información<span class="sr"> sobre rehabilitación oral</span></a>
         </article>
         <article class="t">
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20c6 10 30 10 36 0" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/><path d="M12 25v4M18 27v5M24 28v5M30 27v5M36 25v4" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round"/><path d="M38 6l1.6 3.4L43 11l-3.4 1.6L38 16l-1.6-3.4L33 11l3.4-1.6z" fill="var(--orange)"/></svg>
           <h3>Estética dental</h3>
           <p>Mejoramos el color, la forma y la armonía de la sonrisa respetando al máximo el diente natural.</p>
           <ul><li>Carillas</li><li>Blanqueamiento</li><li>Diseño de sonrisa</li></ul>
+          <a class="more" href="estetica-dental-chamartin.html">Más información<span class="sr"> sobre estética dental</span></a>
         </article>
         <article class="t">
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16c5-4 11-4 16 0 5-4 11-4 16 0" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round"/><path d="M14 18v14c0 4 2 8 4 8s2-6 6-6 4 6 6 6 4-4 4-8V18" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round"/></svg>
           <h3>Periodoncia</h3>
           <p>Cuidado de encías y hueso, la base sobre la que se sostiene cualquier tratamiento a largo plazo.</p>
           <ul><li>Tratamiento de encías</li><li>Mantenimiento</li></ul>
+          <a class="more" href="periodoncia-chamartin.html">Más información<span class="sr"> sobre periodoncia</span></a>
         </article>
         <article class="t">
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8c-5 0-8 4-8 10 0 8 4 12 5 20 .5 3 2 4 3 4 2 0 3-3 4-7 1-3 2-5 6-5s5 2 6 5c1 4 2 7 4 7 1 0 2.5-1 3-4 1-8 5-12 5-20 0-6-3-10-8-10-4 0-6 2-10 2s-6-2-10-2z" fill="none" stroke="var(--ink)" stroke-width="1.6"/><circle cx="34" cy="16" r="3" fill="var(--orange)"/></svg>
           <h3>Odontología general</h3>
           <p>Revisiones, empastes, endodoncias e higiene profesional para mantener la salud de toda la familia.</p>
           <ul><li>Revisión</li><li>Higiene</li><li>Endodoncia</li></ul>
+          <a class="more" href="dentista-chamartin.html">Más información<span class="sr"> sobre odontología general</span></a>
         </article>
         <article class="t">
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="26" fill="none" stroke="var(--ink)" stroke-width="1.6"/><path d="M6 30l10-9 8 7 6-5 12 10" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-linejoin="round"/><rect x="28" y="14" width="7" height="7" transform="rotate(45 31.5 17.5)" fill="var(--orange)"/></svg>
           <h3>Diagnóstico y planificación</h3>
           <p>Estudio radiológico y fotográfico para explicar con claridad la situación de partida y las opciones de tratamiento.</p>
           <ul><li>Estudio completo</li><li>Presupuesto detallado</li></ul>
+          <a class="more" href="estudio-dental-chamartin.html">Más información<span class="sr"> sobre diagnóstico y planificación</span></a>
         </article>
       </div>
     </div>
@@ -308,6 +370,53 @@ footer small{font-size:13px;color:var(--stone);letter-spacing:.04em}
           <div class="pillar"><h3>Experiencia</h3><p>Más de 35 años ejerciendo en el mismo barrio.</p></div>
           <div class="pillar"><h3>Precisión</h3><p>Planificación detallada antes de cada tratamiento.</p></div>
           <div class="pillar"><h3>Cercanía</h3><p>Le explicamos cada paso y cada presupuesto.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block doctor" id="doctor">
+    <div class="wrap">
+      <div class="doctor-intro">
+        <span class="eyebrow">El doctor</span>
+        <h2>Dr. Federico Herrero Climent</h2>
+        <p class="lead">Médico y odontólogo, doctor en Ciencias Odontológicas por la Universidad Complutense de Madrid. Desde 1990 dedica su consulta a la rehabilitación oral, la periodoncia y la implantología, y desde 1996 forma a otros dentistas como profesor invitado en programas de posgrado de la Complutense.</p>
+        <div class="creds">
+          <div><b>1990</b><span>Consulta propia en Madrid</span></div>
+          <div><b>1996</b><span>Profesor invitado en la UCM</span></div>
+          <div><b>SEPA</b><span>Socio especialista</span></div>
+        </div>
+      </div>
+      <div class="cv">
+        <div>
+          <h3>Formación</h3>
+          <ol>
+          <li><span class="y">1987</span><p>Licenciado en Medicina y Cirugía<small>Universidad de Alcalá de Henares</small></p></li>
+          <li><span class="y">1989</span><p>Licenciado en Odontología<small>Universidad Iberoamericana (UNIBE), Santo Domingo</small></p></li>
+          <li><span class="y">1995</span><p>Posgrado en Periodoncia<small>Royal Dental College, Aarhus (Dinamarca)</small></p></li>
+          <li><span class="y">2004</span><p>Máster en Periodoncia<small>Universidad Complutense de Madrid</small></p></li>
+          <li><span class="y">2019</span><p>Máster en Estética y Rehabilitación Oral<small>Universitat Politècnica de Catalunya</small></p></li>
+          <li><span class="y">—</span><p>Doctorado en Ciencias Odontológicas<small>Universidad Complutense de Madrid</small></p></li>
+          </ol>
+        </div>
+        <div>
+          <h3>Docencia y trayectoria</h3>
+          <ul>
+          <li><span class="y">1990</span><p>Práctica privada en Madrid<small>Rehabilitación oral, periodoncia, implantología y estética dental</small></p></li>
+          <li><span class="y">1996</span><p>Socio especialista de SEPA<small>Sociedad Española de Periodoncia y Osteointegración</small></p></li>
+          <li><span class="y">1996</span><p>Profesor invitado del Máster de Periodoncia<small>Universidad Complutense de Madrid</small></p></li>
+          <li><span class="y">2006</span><p>Profesor invitado del Diploma Universitario en Implantología Clínica<small>Universidad Complutense de Madrid</small></p></li>
+          <li><span class="y">2017</span><p>Profesor invitado del Máster en Nuevas Tecnologías<small>Universidad Complutense de Madrid</small></p></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Publicaciones</h3>
+          <ul>
+          <li><span class="y">1995</span><p>Autor del libro <em>Atlas Clínico de Implantología Oral</em><small>TRP Ediciones</small></p></li>
+          <li><span class="y">1998</span><p>Traductor del libro <em>Factores de Riesgo en Implantología Oral</em><small>Editorial Quintessence</small></p></li>
+          <li><span class="y">2002</span><p>Capítulo «Prevención de la patología periimplantaria»<small>En <em>Odontología preventiva y odontología comunitaria</em>. Ed. Avances Médico-Dentales</small></p></li>
+          <li><span class="y">2005</span><p>Capítulo «Superficies de implantes»<small>En <em>Manual SEPA de Periodoncia y Terapéutica de Implantes</em>. Ed. Panamericana</small></p></li>
+          </ul>
         </div>
       </div>
     </div>
