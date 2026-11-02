@@ -131,7 +131,9 @@ section.block{padding-block:clamp(72px,10vw,130px)}
 .t::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--orange);transition:width .45s ease}
 .t:not(:nth-child(3n+1))::after{left:34px}
 .t:hover::after{width:64px}
-@media (max-width:960px){.treat{grid-template-columns:1fr 1fr}.t,.t:not(:nth-child(3n+1)){padding:34px 28px 38px 0;border-left:0}.t:nth-child(2n){padding-left:28px;border-left:1px solid var(--line)}.t::after,.t:not(:nth-child(3n+1))::after{left:0}.t:nth-child(2n)::after{left:28px}}
+.t.wide{grid-column:1/-1;display:grid;grid-template-columns:46px minmax(180px,.7fr) 1.6fr auto;column-gap:34px;row-gap:10px;align-items:center}
+.t.wide .ico{grid-row:1/3}.t.wide h3{grid-column:2;grid-row:1/3}.t.wide p{grid-column:3;grid-row:1}.t.wide ul{grid-column:3;grid-row:2;margin:0}.t.wide .more{grid-column:4;grid-row:1/3}
+@media (max-width:960px){.t.wide{display:flex}.treat{grid-template-columns:1fr 1fr}.t,.t:not(:nth-child(3n+1)){padding:34px 28px 38px 0;border-left:0}.t:nth-child(2n){padding-left:28px;border-left:1px solid var(--line)}.t::after,.t:not(:nth-child(3n+1))::after{left:0}.t:nth-child(2n)::after{left:28px}}
 @media (max-width:620px){.treat{grid-template-columns:1fr}.t,.t:nth-child(2n){padding:30px 0 34px;border-left:0}.t:nth-child(2n)::after{left:0}}
 
 .t .more{margin-top:auto;padding-top:8px;font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
@@ -259,6 +261,7 @@ footer small{font-size:13px;color:var(--stone);letter-spacing:.04em}
             <li><a href="implantes-dentales-chamartin.html">Implantes dentales</a></li>
             <li><a href="rehabilitacion-oral-chamartin.html">Rehabilitación oral</a></li>
             <li><a href="estetica-dental-chamartin.html">Estética dental</a></li>
+            <li><a href="ortodoncia-chamartin.html">Ortodoncia</a></li>
             <li><a href="periodoncia-chamartin.html">Periodoncia</a></li>
             <li><a href="dentista-chamartin.html">Odontología general</a></li>
             <li><a href="estudio-dental-chamartin.html">Diagnóstico y planificación</a></li>
@@ -335,6 +338,13 @@ footer small{font-size:13px;color:var(--stone);letter-spacing:.04em}
           <a class="more" href="estetica-dental-chamartin.html">Más información<span class="sr"> sobre estética dental</span></a>
         </article>
         <article class="t">
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 14h8v16c0 3-1.5 5-4 5s-4-2-4-5zM15 13h8v19c0 3-1.5 5-4 5s-4-2-4-5zM25 13h8v19c0 3-1.5 5-4 5s-4-2-4-5zM35 14h8v16c0 3-1.5 5-4 5s-4-2-4-5z" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 22.5h40" stroke="var(--orange)" stroke-width="1.8"/><rect x="7" y="20" width="4" height="5" fill="var(--orange)"/><rect x="17" y="20" width="4" height="5" fill="var(--orange)"/><rect x="27" y="20" width="4" height="5" fill="var(--orange)"/><rect x="37" y="20" width="4" height="5" fill="var(--orange)"/></svg>
+          <h3>Ortodoncia</h3>
+          <p>Alineamos los dientes y corregimos la mordida con la opción que mejor encaje con su caso y su día a día.</p>
+          <ul><li>Ortodoncia invisible</li><li>Brackets</li><li>Retención</li></ul>
+          <a class="more" href="ortodoncia-chamartin.html">Más información<span class="sr"> sobre ortodoncia</span></a>
+        </article>
+        <article class="t">
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16c5-4 11-4 16 0 5-4 11-4 16 0" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round"/><path d="M14 18v14c0 4 2 8 4 8s2-6 6-6 4 6 6 6 4-4 4-8V18" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round"/></svg>
           <h3>Periodoncia</h3>
           <p>Cuidado de encías y hueso, la base sobre la que se sostiene cualquier tratamiento a largo plazo.</p>
@@ -348,7 +358,7 @@ footer small{font-size:13px;color:var(--stone);letter-spacing:.04em}
           <ul><li>Revisión</li><li>Higiene</li><li>Endodoncia</li></ul>
           <a class="more" href="dentista-chamartin.html">Más información<span class="sr"> sobre odontología general</span></a>
         </article>
-        <article class="t">
+        <article class="t wide">
           <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="26" fill="none" stroke="var(--ink)" stroke-width="1.6"/><path d="M6 30l10-9 8 7 6-5 12 10" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-linejoin="round"/><rect x="28" y="14" width="7" height="7" transform="rotate(45 31.5 17.5)" fill="var(--orange)"/></svg>
           <h3>Diagnóstico y planificación</h3>
           <p>Estudio radiológico y fotográfico para explicar con claridad la situación de partida y las opciones de tratamiento.</p>
